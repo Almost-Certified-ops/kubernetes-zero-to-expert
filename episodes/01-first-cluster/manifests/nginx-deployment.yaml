@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-k8s-yaml
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-k8s-yaml
+  template:
+    metadata:
+      labels:
+        app: hello-k8s-yaml
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
