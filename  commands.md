@@ -1,19 +1,13 @@
-Install Minikube
-
+# Install Minikube
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
-minikube start --driver=docker
 
-install Kubectl
+# Install Kubectl
 https://kubernetes.io/docs/tasks/tools/
 
+# Setup kubectl autocomplete
 Kubectl autocomplete
 kubectl completion -h
 https://kubernetes.io/docs/reference/kubectl/generated/kubectl_completion/
-
-
-
-kubectl port-forward svc/hello-k8s 8080:80
-
 
 # Check tools
 docker --version
@@ -42,6 +36,7 @@ kubectl get pods
 # Expose app
 kubectl expose deployment hello-k8s --type=NodePort --port=80
 kubectl get services
+kubectl port-forward svc/hello-k8s 8080:80
 
 # Open service
 minikube service hello-k8s
